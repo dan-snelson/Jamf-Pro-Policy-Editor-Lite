@@ -1,5 +1,5 @@
 # Jamf Pro Policy Editor Lite
-## Edit a policy's version number via the API
+## Make quick work of routine policy version updates with Jamf Pro Policy Editor Lite, which leverages the Jamf Pro API to automate routine policy version updates via an interactive Bash script.
 
 ---
 
@@ -32,7 +32,7 @@ To utilize this script, the API account must have the following privileges:
 ### Policies
 If policies include the version number in parenthesis, for example: "Adobe Prelude CC 2018 (7.1.1)", the script will automatically parse the version number, for example: "7.1.1"; otherwise, you will be prompted for the version number.
 
-(If your policy names preceed the version number with a dash, search the script for the `currentVersion` variable to change the default behavior.) 
+(If your policy names preceed the version number with a dash, search the script for the `currentVersion` variable to change the default behavior.)
 
 ### Packages
 The updated package must be present **before** running this script.

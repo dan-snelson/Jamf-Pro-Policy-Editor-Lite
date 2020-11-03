@@ -65,5 +65,5 @@ While the script does backup a policy's XML before performing updates, please th
 
 ## Presentations
 
-- [JNUC 2020](http://www.snelson.us/policyEditorLite/Jamf_Pro_Policy_Editor_Lite_JNUC327.mp4)
+- Personal edit of [JNUC 2020](http://www.snelson.us/policyEditorLite/Jamf_Pro_Policy_Editor_Lite_JNUC327.mp4)
 - [October 2019 U of U MacAdmins](https://stream.lib.utah.edu/index.php?c=details&id=13291)

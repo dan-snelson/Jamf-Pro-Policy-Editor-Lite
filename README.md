@@ -1,5 +1,5 @@
 # Jamf Pro Policy Editor Lite
-## Make quick work of routine policy version updates with Jamf Pro Policy Editor Lite, which leverages the Jamf Pro API to automate routine policy version updates via an interactive Bash script.
+## Make quick work of routine policy version updates with Jamf Pro Policy Editor Lite, which leverages the Jamf Pro API to automate routine policy version updates via an interactive Bash script
 
 ---
 
@@ -7,7 +7,7 @@
 
 Since Jamf Pro PI-005903, I’ve been thinking of a faster way to update policies.
 
-Last week, Adobe released six updates which — outside of building new packages via Adobe's admin console — effectively required only incrementing a version number **four** places in each policy (please don't tell @talkingmoose):
+Last week, Adobe released six updates which — outside of building new packages via Adobe's admin console — effectively required only incrementing a version number **four** places in each policy (please don't tell [@talkingmoose](https://github.com/talkingmoose)):
 - Adobe After Effects CC _15.1.1_ was update to: Adobe After Effects CC _15.1.2_
 - Adobe Media Encoder CC _12.1.1_ was update to: Adobe Media Encoder CC _12.1.2_
 - Adobe Bridge CC _8.0.1_ was update to: Adobe Bridge CC _8.1_
@@ -15,7 +15,7 @@ Last week, Adobe released six updates which — outside of building new packages
 - Adobe Prelude CC _7.1_ was update to: Adobe Prelude CC _7.1.1_
 - Adobe XD CC _9.1.12_ was updated to: Adobe XD CC _10.0.12_
 
-With inspiration from @mm2270 [API scripts](https://github.com/mm2270/Casper-API/blob/master/Convert-SG-Search-Search-SG.sh), Jamf Pro Policy Editor Lite was born.
+With inspiration from [@mm2270](https://github.com/mm2270)'s [API scripts](https://github.com/mm2270/Casper-API/blob/master/Convert-SG-Search-Search-SG.sh), Jamf Pro Policy Editor Lite was born.
 
 ---
 
@@ -32,7 +32,7 @@ To utilize this script, the API account must have the following privileges:
 ### Policies
 If policies include the version number in parenthesis, for example: "Adobe Prelude CC 2018 (7.1.1)", the script will automatically parse the version number, for example: "7.1.1"; otherwise, you will be prompted for the version number.
 
-(If your policy names preceed the version number with a dash, search the script for the `currentVersion` variable to change the default behavior.)
+(If your policy names preceded the version number with a dash, search the script for the `currentVersion` variable to change the default behavior.)
 
 ### Packages
 The updated package must be present **before** running this script.
@@ -44,11 +44,45 @@ The updated package must be present **before** running this script.
 This script was designed to be run _interactively_ in Terminal and allows you to use the API (along with valid API credentials) to update a policy's version number.  
 
 This script uses some **BASH** specific items; please first make the script executable:  
-`chmod +x /path/to/Jamf\ Pro\ Policy\ Editor\ Lite.bash`  
+`chmod +x /path/to/policy-editor-lite.bash`  
 
 To use the script:
-`/path/to/path/to/Jamf\ Pro\ Policy\ Editor\ Lite.sh`  
+`/path/to/path/to/policy-editor-lite.bash`
 
+### Version 1.4.4
+
+Inspired by [@grahampugh](https://github.com/grahampugh)'s [erase-install](https://github.com/grahampugh/erase-install), Jamf Pro Policy Editor Lite, version 1.4.4, now includes the following flags:
+
+```
+bash ./policy-editor-lite.bash --help
+
+Jamf Pro Policy Editor Lite, 1.4.4
+by Dan K. Snelson (@dan-snelson)
+
+    Usage:
+    bash ./policy-editor-lite.bash [--filter] [--auto] [--version] [--debug]
+
+    [no flags]    Displays all polcies
+                  If API variables are left blank, you will be prompted to interactively enter.
+                  If you have multiple lanes, fill-in variables in the "laneSelection" function.
+
+    --filter ...  Filters policy names
+
+    --auto        Auto-answers "yes" to prompt Nos. 2, 5 and 6
+
+    --version     Specifies the new version number
+
+    --debug       Enables debug mode
+
+    --help        Displays this message and exits
+
+```
+
+For example, the following command will filter policies names containing `foundry`, auto-answer `Y` to prompt numbers 2, 5 and 6, and pre-populate `7.2.0` for the version number for prompt number 4.
+
+```
+bash ./policy-editor-lite.bash --filter foundry --auto --version 7.2.0
+```
 ---
 
 ## Warning
@@ -58,12 +92,12 @@ While the script does backup a policy's XML before performing updates, please th
 ---
 
 ## Special Thanks
-- @mm2270
-- @BIG-RAT
+- [@mm2270](https://github.com/mm2270)
+- [@BIG-RAT](https://github.com/BIG-RAT)
 
 ---
 
 ## Presentations
 
-- Personal edit of [JNUC 2020](http://www.snelson.us/policyEditorLite/Jamf_Pro_Policy_Editor_Lite_JNUC327.mp4)
+- Personal edit of [JNUC 2020](https://rumble.com/vcwd9r-jamf-pro-policy-editor-lite-jnuc-2020.html?mref=f1z5r&mc=9gb6t)
 - [October 2019 U of U MacAdmins](https://stream.lib.utah.edu/index.php?c=details&id=13291)

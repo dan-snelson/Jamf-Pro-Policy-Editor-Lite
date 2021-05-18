@@ -797,7 +797,7 @@ function promptNewVersion() {
 
 	# Determine current version
 	currentVersion=$( echo ${policyName} | awk -F"[()]" '{print $2}' )	# For policy names where the version is inside parenthesis
-	# currentVersion=$( echo ${policyName} | awk -F"[-]" '{print $2}' )	# For policy names where the version is after a dash
+	# currentVersion=$( echo ${policyName} | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | xargs )	# For policy names where the version is after a dash
 	if [[ -z ${currentVersion} ]]; then
 		currentPackageName=$( xmllint --xpath "/policy/package_configuration/packages/package/name/text()" ${updatesDirectory}/policy-${policyID}.xml )
 

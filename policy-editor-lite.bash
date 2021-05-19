@@ -3,9 +3,9 @@
 #
 # ABOUT
 #
-#   Jamf Pro Policy Editor Lite: Edit a policy's version number via the API
+#	Jamf Pro Policy Editor Lite: Edit a policy's version number via the API
 #
-#	https://github.com/dan-snelson/Jamf-Pro-Scripts/
+#	https://github.com/dan-snelson/Jamf-Pro-Policy-Editor-Lite
 #
 ####################################################################################################
 #
@@ -52,6 +52,9 @@
 #		Added "--debug" option to enable debug mode
 #		Added "--version" option to specify the new version number (thanks for the idea, @canalnoises)
 #
+#	Version 1.4.5, 18-May-2021, dev-yeet
+#		Added more robust version check
+#
 ####################################################################################################
 
 
@@ -72,7 +75,7 @@ apiPassword=""
 
 # ------------------------------ No edits required below this line --------------------------------
 
-scriptVersion="1.4.4"
+scriptVersion="1.4.5"
 autoAnswer="no"
 debug="no"
 
